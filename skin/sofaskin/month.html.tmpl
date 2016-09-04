@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         
-        <title>$station.location Monthly Weather Summary</title>
+        <title>$station.location Monatliche Wetterzusammenfassung</title>
         
         <!-- Open Graph -->
-        <meta property="og:site_name" content="$station.location Monthly Weather Summary" />
-        <meta property="og:description" content="Monthly Weather Summary from $station.location - weather web site powered by weewx" />
+        <meta property="og:site_name" content="$station.location Monatliche Wetterzusammenfassung" />
+        <meta property="og:description" content="Monatliche Wetterzusammenfassung von  $station.location - weather web site powered by weewx" />
 		<meta property="og:type" content="website" /> 
 
         <!-- Icons -->
@@ -43,8 +43,9 @@
             <div class="container-fix" >
                 <div class="h-left" >
                 <h1><i class="fa fa-cloud" ></i> $station.location</h1>
-                <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.google.com/maps/?q=$station.location" target="_blank" ><i class="fa fa-map-marker" ></i> Show on map</a></p>
-                <h2>Monthly Weather Summary</h2>
+                <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.openstreetmap.org/?mlat=$station.latitude_f&mlon=$station.longitude_f#map=16/$station.latitude_f/$station.longitude_f" target="_blank" ><i class="fa fa-map-marker" ></i> Auf Karte zeigen</a></p>
+
+                <h2>Monatliche Wetterzusammenfassung</h2>
                 <p><i class="fa fa-clock-o" ></i> $current.dateTime</p>
                 </div>
                 
@@ -59,19 +60,19 @@
 
                 <nav>
                     <ul>
-                        <li><a href="index.html" >Current</a></li>
-                        <li><a href="week.html" >Week</a></li>
-                        <li class="active" ><a href="month.html" >Month</a></li>
-                        <li><a href="year.html" >Year</a></li>
+                        <li><a href="index.html" >Aktuell</a></li>
+                        <li><a href="week.html" >Woche</a></li>
+                        <li class="active" ><a href="month.html" >Monat</a></li>
+                        <li><a href="year.html" >Jahr</a></li>
                         <li><a href="RSS/weewx_rss.xml" >RSS</a></li>
                         <li><select name="noaaselect" onchange="openNoaaFile(value)">
-                                <option>Monthly summary</option>
+                                <option>Monatliche Fassung</option>
                                 #for $monthYear in $SummaryByMonth
                                     <option value="$monthYear">$monthYear</option>
                                 #end for
                             </select></li>
                         <li><select name="noaaselect" onchange="openNoaaFile(value)">
-                                <option>Yearly summary</option>
+                                <option>J&auml;hrliche Fassung</option>
                                 #for $yr in $SummaryByYear
                                     <option value="$yr">$yr</option>
                                 #end for
@@ -87,30 +88,48 @@
             <div class="left" >
                 
                 <div class="card" >
-                    <h1><i class="fa fa-calendar m-orange" ></i> This Month</h1>
+                    <h1><i class="fa fa-calendar m-orange" ></i> Diesen Monat</h1>
                     <table class="tablespacer">
-                        <tr><td>High Temperature</td><td>$month.outTemp.max</td><td>$month.outTemp.maxtime</td></tr>
-                        <tr><td>Low Temperature</td><td>$month.outTemp.min</td><td>$month.outTemp.mintime</td></tr>
-                        <tr><td>High Heat Index</td><td>$month.heatindex.max</td><td>$month.heatindex.maxtime</td></tr>
+                        <tr><td><h3>Au&szlig;enbedingungen</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$month.outTemp.max</td><td>$month.outTemp.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$month.outTemp.min</td><td>$month.outTemp.mintime</td></tr>
+                        <tr><td>High <a href="https://de.wikipedia.org/wiki/Hitzeindex" target="_blank">Hitzeindex</a></td><td>$month.heatindex.max</td><td>$month.heatindex.maxtime</td></tr>
                         <tr><td>Low Wind Chill</td><td>$month.windchill.min</td><td>$month.windchill.mintime</td></tr>
-                        <tr><td>High Dewpoint</td><td>$month.dewpoint.max</td><td>$month.dewpoint.maxtime</td></tr>
-                        <tr><td>Low Dewpoint</td><td>$month.dewpoint.min</td><td>$month.dewpoint.mintime</td></tr>
-                        <tr><td>High Humidity</td><td>$month.outHumidity.max</td><td>$month.outHumidity.maxtime</td></tr>
-                        <tr><td>Low Humidity</td><td>$month.outHumidity.min</td><td>$month.outHumidity.mintime</td></tr>
-                        <tr><td>High Barometer</td><td>$month.barometer.max</td><td>$month.barometer.maxtime</td></tr>
-                        <tr><td>Low Barometer</td><td>$month.barometer.min</td><td>$month.barometer.mintime</td></tr>
-                        <tr><td>Rain Total</td><td>$month.rain.sum</td><td></td></tr>
-                        <tr><td>High Rain Rate</td><td>$month.rainRate.max</td><td>$month.rainRate.maxtime</td></tr>
-                        <tr><td>High Wind Speed</td><td>$month.wind.max $month.wind.gustdir</td><td>$month.wind.maxtime</td></tr>
-                        <tr><td>Average Wind</td><td>$month.wind.avg</td><td></td></tr>
+                        <tr><td>High Taupunkt</td><td>$month.dewpoint.max</td><td>$month.dewpoint.maxtime</td></tr>
+                        <tr><td>Low Taupunkt</td><td>$month.dewpoint.min</td><td>$month.dewpoint.mintime</td></tr>
+                        <tr><td>High Luftfeuchte</td><td>$month.outHumidity.max</td><td>$month.outHumidity.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$month.outHumidity.min</td><td>$month.outHumidity.mintime</td></tr>
+                        <tr><td>High Luftdruck</td><td>$month.barometer.max</td><td>$month.barometer.maxtime</td></tr>
+                        <tr><td>Low Luftdruck</td><td>$month.barometer.min</td><td>$month.barometer.mintime</td></tr>
+                        <tr><td>Regenmenge</td><td>$month.rain.sum</td><td></td></tr>
+                        <tr><td>H&ouml;chste Regenrate</td><td>$month.rainRate.max</td><td>$month.rainRate.maxtime</td></tr>
+                        <tr><td><h3>Wind</h3></td><td></td>
+                        <tr><td>Windh&ouml;chstgeschwindigkeit</td><td>$month.wind.max $month.wind.gustdir</td><td>$month.wind.maxtime</td></tr>
+                        <tr><td>Wind &#8960;</td><td>$month.wind.avg</td><td></td></tr>
                         <tr><td>RMS Wind</td><td>$month.wind.rms</td><td></td></tr>
-                        <tr><td>Vector Average Speed</td><td>$month.wind.vecavg</td><td></td></tr>
-                        <tr><td>Vector Average Direction</td><td>$month.wind.vecdir</td><td></td></tr>
-                        <tr><td>High Inside Temperature</td><td>$month.inTemp.max</td><td>$month.inTemp.maxtime</td></tr>
-                        <tr><td>Low Inside Temperature</td><td>$month.inTemp.min</td><td>$month.inTemp.mintime</td></tr>
+                        <tr><td>Wind Vektor &#8960; &amp; Richtung</td><td>$month.wind.vecavg</td><td>$month.wind.vecdir</td></tr>
+                        <tr><td><h3>Innentemperatur</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$month.inTemp.max</td><td>$month.inTemp.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$month.inTemp.min</td><td>$month.inTemp.mintime</td></tr>
+                        <tr><td>High Luftfeuchte</td><td>$month.inHumidity.max</td><td>$month.inTemp.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$month.inHumidity.min</td><td>$month.inTemp.mintime</td></tr>
                         #if $month.extraTemp1.has_data
-                        <tr><td>High Pond Temp</td><td>$month.extraTemp1.max</td><td>$month.extraTemp1.maxtime</td></tr>
-                        <tr><td>Low Pond Temp</td><td>$month.extraTemp1.min</td><td>$month.extraTemp1.mintime</td></tr>
+                        <tr><td><h3>Extra Temperatur 1</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$month.extraTemp1.max</td><td>$month.extraTemp1.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$month.extraTemp1.min</td><td>$month.extraTemp1.mintime</td></tr>
+                        #end if
+                        #if $month.extraHumid1.has_data
+                        <tr><td>High Luftfeuchte</td><td>$month.extraHumid1.max</td><td>$month.extraHumid1.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$month.extraHumid1.min</td><td>$month.extraHumid1.mintime</td></tr>
+                        #end if
+                        #if $month.extraTemp2.has_data
+                        <tr><td><h3>Extra Temperatur 2</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$month.extraTemp2.max</td><td>$month.extraTemp2.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$month.extraTemp2.min</td><td>$month.extraTemp2.mintime</td></tr>
+                        #end if
+                        #if $month.extraHumid2.has_data
+                        <tr><td>High Luftfeuchte</td><td>$month.extraHumid2.max</td><td>$month.extraHumid2.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$month.extraHumid2.min</td><td>$month.extraHumid2.mintime</td></tr>
                         #end if
                         #if $month.UV.has_data
                         <tr><td>High UV</td><td>$month.UV.max</td><td>$month.UV.maxtime</td></tr>
@@ -128,30 +147,48 @@
                 </div>
 
                 <div class="card" >
-                    <h1><i class="fa fa-calendar-o m-rot" ></i> Calendar Year</h1>
+                    <h1><i class="fa fa-calendar-o m-rot" ></i> Kalenderjahr</h1>
                     <table class="tablespacer">
-                        <tr><td>High Temperature</td><td>$year.outTemp.max</td><td>$year.outTemp.maxtime</td></tr>
-                        <tr><td>Low Temperature</td><td>$year.outTemp.min</td><td>$year.outTemp.mintime</td></tr>
-                        <tr><td>High Heat Index</td><td>$year.heatindex.max</td><td>$year.heatindex.maxtime</td></tr>
+                        <tr><td><h3>Au&szlig;enbedingungen</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$year.outTemp.max</td><td>$year.outTemp.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$year.outTemp.min</td><td>$year.outTemp.mintime</td></tr>
+                        <tr><td>High Hitzeindex</td><td>$year.heatindex.max</td><td>$year.heatindex.maxtime</td></tr>
                         <tr><td>Low Wind Chill</td><td>$year.windchill.min</td><td>$year.windchill.mintime</td></tr>
-                        <tr><td>High Dewpoint</td><td>$year.dewpoint.max</td><td>$year.dewpoint.maxtime</td></tr>
-                        <tr><td>Low Dewpoint</td><td>$year.dewpoint.min</td><td>$year.dewpoint.mintime</td></tr>
-                        <tr><td>High Humidity</td><td>$year.outHumidity.max</td><td>$year.outHumidity.maxtime</td></tr>
-                        <tr><td>Low Humidity</td><td>$year.outHumidity.min</td><td>$year.outHumidity.mintime</td></tr>
-                        <tr><td>High Barometer</td><td>$year.barometer.max</td><td>$year.barometer.maxtime</td></tr>
-                        <tr><td>Low Barometer</td><td>$year.barometer.min</td><td>$year.barometer.mintime</td></tr>
-                        <tr><td>Rain Total</td><td>$year.rain.sum</td><td></td></tr>
-                        <tr><td>High Rain Rate</td><td>$year.rainRate.max</td><td>$year.rainRate.maxtime</td></tr>
-                        <tr><td>High Wind Speed</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
-                        <tr><td>Average Wind</td><td>$year.wind.avg</td><td></td></tr>
+                        <tr><td>H&ouml;chsttaupunkt</td><td>$year.dewpoint.max</td><td>$year.dewpoint.maxtime</td></tr>
+                        <tr><td>Tiefsttaupunkt</td><td>$year.dewpoint.min</td><td>$year.dewpoint.mintime</td></tr>
+                        <tr><td>H&ouml;chstluftfeuchte</td><td>$year.outHumidity.max</td><td>$year.outHumidity.maxtime</td></tr>
+                        <tr><td>Tiefstluftfeuchte</td><td>$year.outHumidity.min</td><td>$year.outHumidity.mintime</td></tr>
+                        <tr><td>H&ouml;chstluftdruck</td><td>$year.barometer.max</td><td>$year.barometer.maxtime</td></tr>
+                        <tr><td>Tiefstluftdruck</td><td>$year.barometer.min</td><td>$year.barometer.mintime</td></tr>
+                        <tr><td>Regen insgesamt</td><td>$year.rain.sum</td><td></td></tr>
+                        <tr><td>H&ouml;chste Regenrate</td><td>$year.rainRate.max</td><td>$year.rainRate.maxtime</td></tr>
+                        <tr><td><h3>Wind</h3></td><td></td>
+                        <tr><td>Windh&ouml;chstgeschwindigkeit</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
+                        <tr><td>Winddurchschnitt</td><td>$year.wind.avg</td><td></td></tr>
                         <tr><td>RMS Wind</td><td>$year.wind.rms</td><td></td></tr>
-                        <tr><td>Vector Average Speed</td><td>$year.wind.vecavg</td><td></td></tr>
-                        <tr><td>Vector Average Direction</td><td>$year.wind.vecdir</td><td></td></tr>
-                        <tr><td>High Inside Temperature</td><td>$year.inTemp.max</td><td>$year.inTemp.maxtime</td></tr>
-                        <tr><td>Low Inside Temperature</td><td>$year.inTemp.min</td><td>$year.inTemp.mintime</td></tr>
+                        <tr><td>Vektor &#8960; &amp; Richtung</td><td>$year.wind.vecavg</td><td>$year.wind.vecdir</td></tr>
+                        <tr><td><h3>Innentemperatur</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$year.inTemp.max</td><td>$year.inTemp.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$year.inTemp.min</td><td>$year.inTemp.mintime</td></tr>
+                        <tr><td>H&ouml;chstluftfeuchte</td><td>$year.inHumidity.max</td><td>$year.inTemp.maxtime</td></tr>
+                        <tr><td>Tiefstluftfeuchte</td><td>$year.inHumidity.min</td><td>$year.inTemp.mintime</td></tr>
                         #if $year.extraTemp1.has_data
-                        <tr><td>High Pond Temp</td><td>$year.extraTemp1.max</td><td>$year.extraTemp1.maxtime</td></tr>
-                        <tr><td>Low Pond Temp</td><td>$year.extraTemp1.min</td><td>$year.extraTemp1.mintime</td></tr>
+                        <tr><td><h3>Extra Temperatur 1</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$year.extraTemp1.max</td><td>$year.extraTemp1.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$year.extraTemp1.min</td><td>$year.extraTemp1.mintime</td></tr>
+                        #end if
+                        #if $year.extraHumid1.has_data
+                        <tr><td>High Luftfeuchte</td><td>$year.extraHumid1.max</td><td>$year.extraHumid1.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$year.extraHumid1.min</td><td>$year.extraHumid1.mintime</td></tr>
+                        #end if
+                        #if $year.extraTemp2.has_data
+                        <tr><td><h3>Extra Temperatur 2</h3></td><td></td>
+                        <tr><td>H&ouml;chsttemperatur</td><td>$year.extraTemp2.max</td><td>$year.extraTemp2.maxtime</td></tr>
+                        <tr><td>Tiefsttemperatur</td><td>$year.extraTemp2.min</td><td>$year.extraTemp2.mintime</td></tr>
+                        #end if
+                        #if $year.extraHumid2.has_data
+                        <tr><td>High Luftfeuchte</td><td>$year.extraHumid2.max</td><td>$year.extraHumid2.maxtime</td></tr>
+                        <tr><td>Low Luftfeuchte</td><td>$year.extraHumid2.min</td><td>$year.extraHumid2.mintime</td></tr>
                         #end if
                         #if $year.UV.has_data
                         <tr><td>High UV</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
@@ -173,16 +210,19 @@
             <div class="right" >
 
                 <div class="card cc graphs" >
-                    <h1><i class="fa fa-line-chart m-gruen" ></i> Monthly Statistics and Plots</h1>
+                    <h1><i class="fa fa-line-chart m-gruen" ></i> Monatliche Statistiken und Graphen</h1>
                     
                     <img src="monthtempdew.png" alt="temperatures" />
                     <img src="monthtempchill.png" alt="heatchill" />
+                    <img src="monthhilow.png" alt="Display highs and lows for the month" title="Daily highs and lows for the month" />
                     <img src="monthrain.png" alt="rain" />
-                    <img src="monthwind.png" alt="wind" />
                     <img src="monthbarometer.png" alt="barometer"/>
+                    <img src="monthhumidity.png" alt="humidity" />
+                    <img src="monthwind.png" alt="wind" />
                     <img src="monthwinddir.png" alt="Hi Wind" />
-                    <img src="monthinside.png" alt="Inside" />
                     <img src="monthwindvec.png" alt="Wind Vector" />
+                    <img src="monthinside.png" alt="Inside" />
+                    <img src="monthinsidehumid.png" alt="Inside Humidity" />
                     #if $month.UV.has_data
                     <img src="monthuv.png" alt="UV Index" />
                     #end if
@@ -194,9 +234,6 @@
                     #end if
                     #if $month.rxCheckPercent.has_data
                     <img src="monthrx.png" alt="month rx percent"/>
-                    #end if
-                    #if $month.extraTemp1.has_data
-                    <img src="monthpond.png" alt="Pond Temperatures" />
                     #end if
                 </div>
                 
@@ -214,18 +251,5 @@
             &sdot; Powered by <a href="http://weewx.com/" target="_blank" >weewx</a>
             </div>
         </footer>
-
-        #if $Extras.has_key('googleAnalyticsId')
-        <!-- Google Analytics -->
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            
-            ga('create', '$Extras.googleAnalyticsId', 'auto');
-            ga('send', 'pageview');
-        </script>
-        #end if
     </body>
 </html>
