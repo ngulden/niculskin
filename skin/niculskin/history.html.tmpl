@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <title>$station.location Current Weather Conditions</title>
+        <title>$station.location $niculskinLabels.title</title>
 
         <!-- Open Graph -->
-        <meta property="og:site_name" content="$station.location Aktuelle Wetterbedingungen" />
-        <meta property="og:description" content="Aktuelle Wetterbedingungen in $station.location - weather web site powered by weewx" />
+        <meta property="og:site_name" content="$station.location $niculskinLabels.title" />
+        <meta property="og:description" content="$niculskinLabels.title in $station.location - weather web site powered by weewx" />
         <meta property="og:type" content="website" />
 
         <!-- Icons -->
@@ -21,9 +21,8 @@
         <!-- Styles -->
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link href="css/main.css" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Skripte -->
         <script src="js/modernizr-2.6.2.min.js"></script>
@@ -33,42 +32,29 @@
             <div class="container-fix" >
                 <div class="h-left" >
                 <h1><i class="fa fa-cloud" ></i> $station.location</h1>
-                <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.openstreetmap.org/?mlat=$station.latitude_f&mlon=$station.longitude_f#map=16/$station.latitude_f/$station.longitude_f" target="_blank" ><i class="fa fa-map-marker" ></i> Auf Karte zeigen</a></p>
+                <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.openstreetmap.org/?mlat=$station.latitude_f&mlon=$station.longitude_f#map=16/$station.latitude_f/$station.longitude_f" target="_blank" ><i class="fa fa-map-marker" ></i> $niculskinLabels.location_ref_label</a></p>
 
 
-                <h2>Aktuelle Wetterbedingungen</h2>
-                <p><i class="fa fa-clock-o" ></i> $current.dateTime</p>
+                <h2>$niculskinLabels.headings.history</h2>
+                <p><i class="fa fa-clock-o" ></i> $niculskinLabels.headings.last_update $current.dateTime</p>
                 </div>
 
                 <div class="h-right" >
                     <table>
                         <tr><td><b>Station:</b></td><td>$station.hardware</td></tr>
                         <tr><td><b>Software:</b></td><td><a href="http://weewx.com/" target="_blank" >weewx v$station.version</a></td></tr>
-                        <tr><td><b>Weewx Laufzeit:</b></td><td>$station.uptime</td></tr>
-                        <tr><td><b>Server Laufzeit:</b></td><td>$station.os_uptime</td></tr>
+                        <tr><td><b>$niculskinLabels.status.station_uptime</b></td><td>$station.uptime</td></tr>
+                        <tr><td><b>$niculskinLabels.status.server_uptime</b></td><td>$station.os_uptime</td></tr>
                     </table>
                 </div>
 
                 <nav>
                     <ul>
-                        <li><a href="index.html" >Aktuell</a></li>
-                        <li><a href="week.html" >Woche</a></li>
-                        <li><a href="month.html" >Monat</a></li>
-                        <li><a href="year.html" >Jahr</a></li>
-                        <li class="active"><a href="history.html">Chronik</a></li>
-                        <li><a href="RSS/weewx_rss.xml" >RSS</a></li>
-                        <li><select name="noaaselect" onchange="openNoaaFile(value)">
-                                <option>Monatliche Fassung</option>
-                                #for $monthYear in $SummaryByMonth
-                                    <option value="$monthYear">$monthYear</option>
-                                #end for
-                            </select></li>
-                        <li><select name="noaaselect" onchange="openNoaaFile(value)">
-                                <option>J&auml;hrliche Fassung</option>
-                                #for $yr in $SummaryByYear
-                                    <option value="$yr">$yr</option>
-                                #end for
-                            </select></li>
+                        <li><a href="index.html">$niculskinLabels.headings.front_page</a></li>
+                        <li><a href="week.html">$niculskinLabels.timespans.week</a></li>
+                        <li><a href="month.html">$niculskinLabels.timespans.month</a></li>
+                        <li><a href="year.html">$niculskinLabels.timespans.year</a></li>
+                        <li class="active"><a href="history.html">$niculskinLabels.headings.history</a></li>
                     </ul>
                 </nav>
             </div>
@@ -100,12 +86,7 @@
 
         <footer>
             <div class="container-fix" >
-            All rights reserved. &copy; 2014
-            #if $Extras.has_key('you')
-            $Extras.you
-            #end if
-            &sdot; Design by <a href="http://blauesledersofa.de" >blaues Ledersofa</a>
-            &sdot; Powered by <a href="http://weewx.com/" target="_blank" >weewx</a>
+            $niculskinLabels.footer
             </div>
         </footer>
     </body>
