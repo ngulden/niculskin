@@ -105,18 +105,6 @@
                         <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$month.extraHumid2.max</td><td>$month.extraHumid2.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$month.extraHumid2.min</td><td>$month.extraHumid2.mintime</td></tr>
                         #end if
-                        #if $month.UV.has_data
-                        <tr><td>High UV</td><td>$month.UV.max</td><td>$month.UV.maxtime</td></tr>
-                        <tr><td>Low UV</td><td>$month.UV.min</td><td>$month.UV.mintime</td></tr>
-                        #end if
-                        #if $month.ET.has_data and $month.ET.sum.raw >0.0
-                        <tr><td>High ET</td><td>$month.ET.max</td><td>$month.ET.maxtime</td></tr>
-                        <tr><td>Low ET</td><td>$month.ET.min</td><td>$month.ET.mintime</td></tr>
-                        #end if
-                        #if $month.radiation.has_data
-                        <tr><td>High Radiation</td><td>$month.radiation.max</td><td>$month.radiation.maxtime</td></tr>
-                        <tr><td>Low Radiation</td><td>$month.radiation.min</td><td>$month.radiation.mintime</td></tr>
-                        #end if
                     </table>
                 </div>
 
@@ -163,18 +151,6 @@
                         #if $year.extraHumid2.has_data
                         <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$year.extraHumid2.max</td><td>$year.extraHumid2.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.extraHumid2.min</td><td>$year.extraHumid2.mintime</td></tr>
-                        #end if
-                        #if $year.UV.has_data
-                        <tr><td>High UV</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
-                        <tr><td>Low UV</td><td>$year.UV.min</td><td>$year.UV.mintime</td></tr>
-                        #end if
-                        #if $year.ET.has_data and $year.ET.sum.raw >0.0
-                        <tr><td>High ET</td><td>$year.ET.max</td><td>$year.ET.maxtime</td></tr>
-                        <tr><td>Low ET</td><td>$year.ET.min</td><td>$year.ET.mintime</td></tr>
-                        #end if
-                        #if $year.radiation.has_data
-                        <tr><td>High Radiation</td><td>$year.radiation.max</td><td>$year.radiation.maxtime</td></tr>
-                        <tr><td>Low Radiation</td><td>$year.radiation.min</td><td>$year.radiation.mintime</td></tr>
                         #end if
                     </table>
                 </div>
