@@ -62,46 +62,46 @@
             <div class="left" >
                 
                 <div class="card" >
-                    <h1><i class="fa fa-calendar-o m-rot" ></i> 12 Monate</h1>
+                    <h1><i class="fa fa-calendar-o m-rot" ></i> $niculskinLabels.headings.year</h1>
                     <table class="tablespacer">
-                        <tr><td><h3>Au&szlig;enbedingungen</h3></td><td></td>
-                        <tr><td>H&ouml;chsttemperatur</td><td>$year.outTemp.max</td><td>$year.outTemp.maxtime</td></tr>
-                        <tr><td>Tiefsttemperatur</td><td>$year.outTemp.min</td><td>$year.outTemp.mintime</td></tr>
-                        <tr><td>High <a href="https://de.wikipedia.org/wiki/Hitzeindex" target="_blank">Hitzeindex</a></td><td>$year.heatindex.max</td><td>$year.heatindex.maxtime</td></tr>
-                        <tr><td>Low Wind Chill</td><td>$year.windchill.min</td><td>$year.windchill.mintime</td></tr>
-                        <tr><td>High Taupunkt</td><td>$year.dewpoint.max</td><td>$year.dewpoint.maxtime</td></tr>
-                        <tr><td>Low Taupunkt</td><td>$year.dewpoint.min</td><td>$year.dewpoint.mintime</td></tr>
-                        <tr><td>High Luftfeuchte</td><td>$year.outHumidity.max</td><td>$year.outHumidity.maxtime</td></tr>
-                        <tr><td>Low Luftfeuchte</td><td>$year.outHumidity.min</td><td>$year.outHumidity.mintime</td></tr>
-                        <tr><td>High Luftdruck</td><td>$year.barometer.max</td><td>$year.barometer.maxtime</td></tr>
-                        <tr><td>Low Luftdruck</td><td>$year.barometer.min</td><td>$year.barometer.mintime</td></tr>
-                        <tr><td><h3>Wind</h3></td><td></td>
-                        <tr><td>Windh&ouml;chstgeschwindigkeit</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
-                        <tr><td>Wind &#8960;</td><td>$year.wind.avg</td><td></td></tr>
-                        <tr><td>RMS Wind</td><td>$year.wind.rms</td><td></td></tr>
-                        <tr><td>Wind Vektor &#8960; &amp; Richtung</td><td>$year.wind.vecavg</td><td>$year.wind.vecdir</td></tr>
-                        <tr><td><h3>Innentemperatur</h3></td><td></td>
-                        <tr><td>H&ouml;chsttemperatur</td><td>$year.inTemp.max</td><td>$year.inTemp.maxtime</td></tr>
-                        <tr><td>Tiefsttemperatur</td><td>$year.inTemp.min</td><td>$year.inTemp.mintime</td></tr>
-                        <tr><td>High Luftfeuchte</td><td>$year.inHumidity.max</td><td>$year.inTemp.maxtime</td></tr>
-                        <tr><td>Low Luftfeuchte</td><td>$year.inHumidity.min</td><td>$year.inTemp.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.outside_conditions</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$year.outTemp.max</td><td>$year.outTemp.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$year.outTemp.min</td><td>$year.outTemp.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.heatindex</td><td>$year.heatindex.max</td><td>$year.heatindex.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.windchill</td><td>$year.windchill.min</td><td>$year.windchill.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.dewpoint_max</td><td>$year.dewpoint.max</td><td>$year.dewpoint.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.dewpoint_min</td><td>$year.dewpoint.min</td><td>$year.dewpoint.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$year.outHumidity.max</td><td>$year.outHumidity.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.outHumidity.min</td><td>$year.outHumidity.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer_max</td><td>$year.barometer.max</td><td>$year.barometer.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$year.barometer.min</td><td>$year.barometer.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.wind_max</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$year.wind.avg</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_rms</td><td>$year.wind.rms</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_vec</td><td>$year.wind.vecavg</td><td>$year.wind.vecdir</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.inside</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$year.inTemp.max</td><td>$year.inTemp.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$year.inTemp.min</td><td>$year.inTemp.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$year.inHumidity.max</td><td>$year.inTemp.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.inHumidity.min</td><td>$year.inTemp.mintime</td></tr>
                         #if $year.extraTemp1.has_data
-                        <tr><td><h3>Extra Temperatur 1</h3></td><td></td>
-                        <tr><td>H&ouml;chsttemperatur</td><td>$year.extraTemp1.max</td><td>$year.extraTemp1.maxtime</td></tr>
-                        <tr><td>Tiefsttemperatur</td><td>$year.extraTemp1.min</td><td>$year.extraTemp1.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.extra1</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$year.extraTemp1.max</td><td>$year.extraTemp1.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$year.extraTemp1.min</td><td>$year.extraTemp1.mintime</td></tr>
                         #end if
                         #if $month.extraHumid1.has_data
-                        <tr><td>High Luftfeuchte</td><td>$year.extraHumid1.max</td><td>$year.extraHumid1.maxtime</td></tr>
-                        <tr><td>Low Luftfeuchte</td><td>$year.extraHumid1.min</td><td>$year.extraHumid1.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$year.extraHumid1.max</td><td>$year.extraHumid1.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.extraHumid1.min</td><td>$year.extraHumid1.mintime</td></tr>
                         #end if
                         #if $month.extraTemp2.has_data
-                        <tr><td><h3>Extra Temperatur 2</h3></td><td></td>
-                        <tr><td>H&ouml;chsttemperatur</td><td>$year.extraTemp2.max</td><td>$year.extraTemp2.maxtime</td></tr>
-                        <tr><td>Tiefsttemperatur</td><td>$year.extraTemp2.min</td><td>$year.extraTemp2.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.extra2</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$year.extraTemp2.max</td><td>$year.extraTemp2.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$year.extraTemp2.min</td><td>$year.extraTemp2.mintime</td></tr>
                         #end if
                         #if $month.extraHumid2.has_data
-                        <tr><td>High Luftfeuchte</td><td>$year.extraHumid2.max</td><td>$year.extraHumid2.maxtime</td></tr>
-                        <tr><td>Low Luftfeuchte</td><td>$year.extraHumid2.min</td><td>$year.extraHumid2.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$year.extraHumid2.max</td><td>$year.extraHumid2.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.extraHumid2.min</td><td>$year.extraHumid2.mintime</td></tr>
                         #end if
                         #if $year.UV.has_data
                         <tr><td>High UV</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
@@ -121,8 +121,8 @@
                 <div class="card" >
                     <h1><i class="fa fa-cloud m-blau" ></i> Regenjahr (1-$station.rain_year_str Beginn)</h1>
                     <table class="tablespacer">
-                        <tr><td>Gesamtregenmenge 12 Monate</td><td>$rainyear.rain.sum</td><td></td></tr>
-                        <tr><td>H&ouml;chste Regenrate</td><td>$rainyear.rainRate.max</td><td>$rainyear.rainRate.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$rainyear.rain.sum</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$rainyear.rainRate.max</td><td>$rainyear.rainRate.maxtime</td></tr>
                     </table>
                 </div>
 

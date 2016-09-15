@@ -66,20 +66,20 @@
             <div class="left" >
                 
                 <div class="card" >
-                    <h1><i class="fa fa-sun-o m-orange" ></i> $niculskinLabels.index_labels.current_conditions</h1>
+                    <h1><i class="fa fa-sun-o m-orange" ></i> $niculskinLabels.headings.current_conditions</h1>
                     <table class="tablespacer">
-                        <tr><td>$niculskinLabels.condition_labels_out_temp</td><td>$current.outTemp</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.windchill</td><td>$current.windchill</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.heatindex</td><td>$current.heatindex</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.dewpoint</td><td>$current.dewpoint</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.out_humidity</td><td>$current.outHumidity</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.barometer</td><td>$current.barometer</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.barometer_trend ($trend.time_delta.hour.format("%.0f"))</td><td>$trend.barometer</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.wind</td><td>$current.windSpeed $current.windDir.ordinal_compass ($current.windDir)</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.rain_rate</td><td>$current.rainRate</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.in_temp_humidity</td><td>$current.inTemp | $current.inHumidity</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.extra1_temp_humidity</td><td>$current.extraTemp1 | $current.extraHumid1</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.extra2_temp_humidity</td><td>$current.extraTemp2 | $current.extraHumid2</td></tr>
+                        <tr><td>$niculskinLabels.conditions.out_temp</td><td>$current.outTemp</td></tr>
+                        <tr><td>$niculskinLabels.conditions.windchill</td><td>$current.windchill</td></tr>
+                        <tr><td>$niculskinLabels.conditions.heatindex</td><td>$current.heatindex</td></tr>
+                        <tr><td>$niculskinLabels.conditions.dewpoint</td><td>$current.dewpoint</td></tr>
+                        <tr><td>$niculskinLabels.conditions.out_humidity</td><td>$current.outHumidity</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer</td><td>$current.barometer</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer_trend ($trend.time_delta.hour.format("%.0f"))</td><td>$trend.barometer</td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind</td><td>$current.windSpeed $current.windDir.ordinal_compass ($current.windDir)</td></tr>
+                        <tr><td>$niculskinLabels.conditions.rain_rate</td><td>$current.rainRate</td></tr>
+                        <tr><td>$niculskinLabels.conditions.in_temp_humidity</td><td>$current.inTemp | $current.inHumidity</td></tr>
+                        <tr><td>$niculskinLabels.conditions.extra1_temp_humidity</td><td>$current.extraTemp1 | $current.extraHumid1</td></tr>
+                        <tr><td>$niculskinLabels.conditions.extra2_temp_humidity</td><td>$current.extraTemp2 | $current.extraHumid2</td></tr>
                         #if $day.UV.has_data
                         <tr><td>UV</td><td>$current.UV</td></tr>
                         #end if
@@ -93,48 +93,48 @@
                 </div>
 
                 <div class="card" >
-                    <h1><i class="fa fa-moon-o m-grau" ></i> $niculskinLabels.index_labels.since_midnight</h1>
+                    <h1><i class="fa fa-moon-o m-grau" ></i> $niculskinLabels.headings.since_midnight</h1>
                     <table class="tablespacer">
-                        <tr><td><h3>$niculskinLabels.index_labels.outside_conditions</h3></td><td></td>
-                        <tr><td>$niculskinLabels.condition_labels.temp_max</td><td>$day.outTemp.max</td><td>$day.outTemp.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.temp_min</td><td>$day.outTemp.min</td><td>$day.outTemp.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.heatindex</td><td>$day.heatindex.max</td><td>$day.heatindex.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.windchill</td><td>$day.windchill.min</td><td>$day.windchill.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.dewpoint_max</td><td>$day.dewpoint.max</td><td>$day.dewpoint.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.dewpoint_min</td><td>$day.dewpoint.min</td><td>$day.dewpoint.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.humidity_max</td><td>$day.outHumidity.max</td><td>$day.outHumidity.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.humidity_min</td><td>$day.outHumidity.min</td><td>$day.outHumidity.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.barometer_max</td><td>$day.barometer.max</td><td>$day.barometer.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.barometer_min</td><td>$day.barometer.min</td><td>$day.barometer.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.rain_sum</td><td>$day.rain.sum</td><td></td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.rain_rate_max</td><td>$day.rainRate.max</td><td>$day.rainRate.maxtime</td></tr>
-                        <tr><td><h3>$niculskinLabels.index_labels.wind</h3></td><td></td>
-                        <tr><td>$niculskinLabels.condition_labels.wind_max</td><td>$day.wind.max $day.wind.gustdir</td><td>$day.wind.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.wind_avg</td><td>$day.wind.avg</td><td></td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.wind_rms</td><td>$day.wind.rms</td><td></td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.wind_vec</td><td>$day.wind.vecavg</td><td>$day.wind.vecdir</td></tr>
-                        <tr><td><h3>$niculskinLabels.index_labels.inside</h3></td><td></td>
-                        <tr><td>$niculskinLabels.condition_labels.temp_max</td><td>$day.inTemp.max</td><td>$day.inTemp.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.temp_min</td><td>$day.inTemp.min</td><td>$day.inTemp.mintime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.humidity_max</td><td>$day.inHumidity.max</td><td>$day.inHumidity.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.humidity_min</td><td>$day.inHumidity.min</td><td>$day.inHumidity.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.outside_conditions</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$day.outTemp.max</td><td>$day.outTemp.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$day.outTemp.min</td><td>$day.outTemp.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.heatindex</td><td>$day.heatindex.max</td><td>$day.heatindex.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.windchill</td><td>$day.windchill.min</td><td>$day.windchill.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.dewpoint_max</td><td>$day.dewpoint.max</td><td>$day.dewpoint.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.dewpoint_min</td><td>$day.dewpoint.min</td><td>$day.dewpoint.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$day.outHumidity.max</td><td>$day.outHumidity.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$day.outHumidity.min</td><td>$day.outHumidity.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer_max</td><td>$day.barometer.max</td><td>$day.barometer.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$day.barometer.min</td><td>$day.barometer.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$day.rain.sum</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$day.rainRate.max</td><td>$day.rainRate.maxtime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.wind_max</td><td>$day.wind.max $day.wind.gustdir</td><td>$day.wind.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$day.wind.avg</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_rms</td><td>$day.wind.rms</td><td></td></tr>
+                        <tr><td>$niculskinLabels.conditions.wind_vec</td><td>$day.wind.vecavg</td><td>$day.wind.vecdir</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.inside</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$day.inTemp.max</td><td>$day.inTemp.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$day.inTemp.min</td><td>$day.inTemp.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$day.inHumidity.max</td><td>$day.inHumidity.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$day.inHumidity.min</td><td>$day.inHumidity.mintime</td></tr>
                         #if $day.extraTemp1.has_data
-                        <tr><td><h3>$niculskinLabels.index_labels.extra1</h3></td><td></td>
-                        <tr><td>$niculskinLabels.condition_labels.temp_max</td><td>$day.extraTemp1.max</td><td>$day.extraTemp1.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.temp_min</td><td>$day.extraTemp1.min</td><td>$day.extraTemp1.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.extra1</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$day.extraTemp1.max</td><td>$day.extraTemp1.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$day.extraTemp1.min</td><td>$day.extraTemp1.mintime</td></tr>
                         #end if
                         #if $day.extraHumid1.has_data
-                        <tr><td>$niculskinLabels.condition_labels.humidity_max</td><td>$day.extraHumid1.max</td><td>$day.extraHumid1.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.humidity_min</td><td>$day.extraHumid1.min</td><td>$day.extraHumid1.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$day.extraHumid1.max</td><td>$day.extraHumid1.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$day.extraHumid1.min</td><td>$day.extraHumid1.mintime</td></tr>
                         #end if
                         #if $day.extraTemp2.has_data
-                        <tr><td><h3>$niculskinLabels.index_labels.extra1</h3></td><td></td>
-                        <tr><td>$niculskinLabels.condition_labels.temp_max</td><td>$day.extraTemp2.max</td><td>$day.extraTemp2.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.temp_min</td><td>$day.extraTemp2.min</td><td>$day.extraTemp2.mintime</td></tr>
+                        <tr><td><h3>$niculskinLabels.headings.extra2</h3></td><td></td>
+                        <tr><td>$niculskinLabels.conditions.temp_max</td><td>$day.extraTemp2.max</td><td>$day.extraTemp2.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.temp_min</td><td>$day.extraTemp2.min</td><td>$day.extraTemp2.mintime</td></tr>
                         #end if
                         #if $day.extraHumid2.has_data
-                        <tr><td>$niculskinLabels.condition_labels.</td><td>$day.extraHumid2.max</td><td>$day.extraHumid2.maxtime</td></tr>
-                        <tr><td>$niculskinLabels.condition_labels.</td><td>$day.extraHumid2.min</td><td>$day.extraHumid2.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$day.extraHumid2.max</td><td>$day.extraHumid2.maxtime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$day.extraHumid2.min</td><td>$day.extraHumid2.mintime</td></tr>
                         #end if
                         #if $day.UV.has_data
                         <tr><td>High UV</td><td>$day.UV.max</td><td>$day.UV.maxtime</td></tr>
@@ -244,52 +244,52 @@
                     <div class="haelfte" >
                         <h3>Sonne</h3>
                         <table>
-                            <tr><td>$niculskinLabels.index_labels.civil_twilight_start:</td><td>$almanac(horizon=-6).sun(use_center=1).rise</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.sunrise:</td><td>$almanac.sun.rise.string($sun_None)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.transit:</td><td>$almanac.sun.transit</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.sunset:</td><td>$almanac.sun.set.string($sun_None)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.civil_twilight_end:</td><td>$almanac(horizon=-6).sun(use_center=1).set</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.azimuth:</td><td>$("%.1f&deg;" % $almanac.sun.az)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.altitude:</td><td>$("%.1f&deg;" % $sun_altitude)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.right_ascension:</td><td>$("%.1f&deg;" % $almanac.sun.ra)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.declination:</td><td>$("%.1f&deg;" % $almanac.sun.dec)</td></tr>
+                            <tr><td>$niculskinLabels.headings.civil_twilight_start:</td><td>$almanac(horizon=-6).sun(use_center=1).rise</td></tr>
+                            <tr><td>$niculskinLabels.headings.sunrise:</td><td>$almanac.sun.rise.string($sun_None)</td></tr>
+                            <tr><td>$niculskinLabels.headings.transit:</td><td>$almanac.sun.transit</td></tr>
+                            <tr><td>$niculskinLabels.headings.sunset:</td><td>$almanac.sun.set.string($sun_None)</td></tr>
+                            <tr><td>$niculskinLabels.headings.civil_twilight_end:</td><td>$almanac(horizon=-6).sun(use_center=1).set</td></tr>
+                            <tr><td>$niculskinLabels.headings.azimuth:</td><td>$("%.1f&deg;" % $almanac.sun.az)</td></tr>
+                            <tr><td>$niculskinLabels.headings.altitude:</td><td>$("%.1f&deg;" % $sun_altitude)</td></tr>
+                            <tr><td>$niculskinLabels.headings.right_ascension:</td><td>$("%.1f&deg;" % $almanac.sun.ra)</td></tr>
+                            <tr><td>$niculskinLabels.headings.declination:</td><td>$("%.1f&deg;" % $almanac.sun.dec)</td></tr>
                             #if $almanac.next_equinox.raw < $almanac.next_solstice.raw
                             ## The equinox is before the solstice. Display them in order.
-                            <tr><td>$niculskinLabels.index_labels.equinox:</td><td>$almanac.next_equinox</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.solstice:</td><td>$almanac.next_solstice</td></tr>
+                            <tr><td>$niculskinLabels.headings.equinox:</td><td>$almanac.next_equinox</td></tr>
+                            <tr><td>$niculskinLabels.headings.solstice:</td><td>$almanac.next_solstice</td></tr>
                             #else
                             ## The solstice is before the equinox. Display them in order.
-                            <tr><td>$niculskinLabels.index_labels.solstice:</td><td>$almanac.next_solstice</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.equinox:</td><td>$almanac.next_equinox</td></tr>
+                            <tr><td>$niculskinLabels.headings.solstice:</td><td>$almanac.next_solstice</td></tr>
+                            <tr><td>$niculskinLabels.headings.equinox:</td><td>$almanac.next_equinox</td></tr>
                             #end if
                         </table>
                     </div>
                     <div class="haelfte" >
                         <h3>Mond</h3>
                         <table>
-                            <tr><td>$niculskinLabels.index_labels.rise:</td><td>$almanac.moon.rise</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.transit:</td><td>$almanac.moon.transit</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.set:</td><td>$almanac.moon.set</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.azimuth:</td><td>$("%.1f&deg;" % $almanac.moon.az)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.altitude:</td><td>$("%.1f&deg;" % $almanac.moon.alt)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.right_ascension:</td><td>$("%.1f&deg;" % $almanac.moon.ra)</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.declination:</td><td>$("%.1f&deg;" % $almanac.moon.dec)</td></tr>
+                            <tr><td>$niculskinLabels.headings.rise:</td><td>$almanac.moon.rise</td></tr>
+                            <tr><td>$niculskinLabels.headings.transit:</td><td>$almanac.moon.transit</td></tr>
+                            <tr><td>$niculskinLabels.headings.set:</td><td>$almanac.moon.set</td></tr>
+                            <tr><td>$niculskinLabels.headings.azimuth:</td><td>$("%.1f&deg;" % $almanac.moon.az)</td></tr>
+                            <tr><td>$niculskinLabels.headings.altitude:</td><td>$("%.1f&deg;" % $almanac.moon.alt)</td></tr>
+                            <tr><td>$niculskinLabels.headings.right_ascension:</td><td>$("%.1f&deg;" % $almanac.moon.ra)</td></tr>
+                            <tr><td>$niculskinLabels.headings.declination:</td><td>$("%.1f&deg;" % $almanac.moon.dec)</td></tr>
                             #if $almanac.next_full_moon.raw < $almanac.next_new_moon.raw
-                            <tr><td>$niculskinLabels.index_labels.full_moon:</td><td>$almanac.next_full_moon</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.new_moon:</td><td>$almanac.next_new_moon</td></tr>
+                            <tr><td>$niculskinLabels.headings.full_moon:</td><td>$almanac.next_full_moon</td></tr>
+                            <tr><td>$niculskinLabels.headings.new_moon:</td><td>$almanac.next_new_moon</td></tr>
                             #else
-                            <tr><td>$niculskinLabels.index_labels.new_moon:</td><td>$almanac.next_new_moon</td></tr>
-                            <tr><td>$niculskinLabels.index_labels.full_moon:</td><td>$almanac.next_full_moon</td></tr>
+                            <tr><td>$niculskinLabels.headings.new_moon:</td><td>$almanac.next_new_moon</td></tr>
+                            <tr><td>$niculskinLabels.headings.full_moon:</td><td>$almanac.next_full_moon</td></tr>
                             #end if
-                            <tr><td>$niculskinLabels.index_labels.moon_phase:</td><td>$almanac.moon_phase<br />($almanac.moon_fullness% full)</td></tr>
+                            <tr><td>$niculskinLabels.headings.moon_phase:</td><td>$almanac.moon_phase<br />($almanac.moon_fullness% full)</td></tr>
                         </table>
                     </div>
                     #else
                     ## No extended almanac information available. Fall back to a simple table.
                     <table>
-                        <tr><td>$niculskinLabels.index_labels.sunrise:</td><td>$almanac.sunrise</td></tr>
-                        <tr><td>$niculskinLabels.index_labels.sunset:</td><td>$almanac.sunset</td></tr>
-                        <tr><td>$niculskinLabels.index_labels.moon_phase:</td><td>$almanac.moon_phase<br/>($almanac.moon_fullness% full)</td></tr>
+                        <tr><td>$niculskinLabels.headings.sunrise:</td><td>$almanac.sunrise</td></tr>
+                        <tr><td>$niculskinLabels.headings.sunset:</td><td>$almanac.sunset</td></tr>
+                        <tr><td>$niculskinLabels.headings.moon_phase:</td><td>$almanac.moon_phase<br/>($almanac.moon_fullness% full)</td></tr>
                     </table>
                     #end if
                 </div>
