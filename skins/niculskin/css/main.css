@@ -714,6 +714,10 @@ footer {
   footer a:hover {
     color: #fffcc2; }
 
+footer div.container div.right {
+    text-align: right;
+}
+
 img.space {
   margin-top: 1.3em; }
 
