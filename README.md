@@ -54,6 +54,11 @@ In order to install this skin into your weewx installation follow these steps:
     language = german
 ```
 
+## Customization
+
+1. You may customize the labels in your language for your needs. The language labels can be found in the appropriate language file in the language skin, e.g. `$WEEWX_ROOT/skins/language/german.conf` for the German language.
+1. If your language is not available, simply copy one of the present language configuration files, change to labels appropriately and refer to it in the Niculskin skin.conf at `WEEWX_ROOT/skins/niculskin/skin.conf`. If you would like to contribute your language file, please open a merge request according to the [Contribution Guideline](CONTRIBUTING.md). Your contribution is welcome.
+
 ## License
 
 See [LICENSE](LICENSE) file.
