@@ -1,0 +1,18 @@
+# Changelog for Niculskin
+
+## v 1.0 (unreleased)
+
+* Add link to source repository to the templates
+* Add contribution guideline
+* Add Installation instructions to README file
+* Update language choices in skin.conf
+* Translate some left overs to German
+* Remove UV, ET, radiation from templates
+* Replace text left overs in templates with labels
+* Reduce threshold for rain day to 0.1 mm/m²
+* Changed the value for heating degree days to 18°C
+* Remove Bootstrap skin. It is not used and needed
+* Fixed a double label in index template
+* Updated German translation
+* Introduced new niculskin Labels to skin.conf and changed the template files
+* Import of Sofaskin 1.1 and bootstrap skin
