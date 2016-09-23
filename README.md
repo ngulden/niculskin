@@ -14,10 +14,45 @@ In order to install this skin into your weewx installation follow these steps:
 1. Clone this repository to your machine, where weewx is installed.
 1. Stop the weewx service.
 1. Copy the files in `bin/user` to `$WEEWX_ROOT/bin/user`.
-1. Copy the directory `skins/languages` to `$WEEWX_ROOT/skins`.
-1. Copy the directory `skins/niculskin` to `$WEEWX_ROOT/skins`.
-1. Edit your `$WEEWX_ROOT/weewx.conf` and set `skin` in the section `StdReport` and subsection `StandardReport` niculskin.
-1. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language.language` to your language.
+1. Copy the directories `skins/languages` and `skins/niculskin` to `$WEEWX_ROOT/skins`.
+1. Edit your `$WEEWX_ROOT/weewx.conf` and set `skin` in the section `StdReport` so it will look something like this:
+```conf
+[StdReport]
+
+    # Where the skins reside, relative to WEEWX_ROOT
+    SKIN_ROOT = skins
+
+    # Where the generated reports should go, relative to WEEWX_ROOT
+    HTML_ROOT = public_html
+
+    # The database binding indicates which data should be used in reports.
+    data_binding = wx_binding
+
+    # Each of the following subsections defines a report that will be run.
+
+    [[StandardReport]]
+        # See the customizing guide to change the units, plot types and line
+        # colors, modify the fonts, display additional sensor data, and other
+        # customizations. Many of those changes can be made here by overriding
+        # parameters, or by modifying templates within the skin itself.
+
+        # The StandardReport uses the 'Standard' skin, which contains the
+        # images, templates and plots for the report.
+        #        skin = Standard
+        skin = niculskin
+```
+6. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language.language` to your language. It should look like this:
+```conf
+[Language]
+
+    #
+    # Set a language below and labels will be overridden with any that are specified in
+    # skins/languages/[language].conf
+    #
+    # Choices are: dutch, espanol, finnish, francais, italian, german
+
+    language = german
+```
 
 ## License
 
