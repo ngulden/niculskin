@@ -41,7 +41,7 @@ In order to install this skin into your weewx installation follow these steps:
         #        skin = Standard
         skin = niculskin
 ```
-6. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language.language` to your language. It should look like this:
+6. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language` to your language. It should look like this:
 ```conf
 [Language]
 
