@@ -5,6 +5,10 @@ Niculskin is a skin for the [weewx project](http://weewx.com/). It is based on t
 1. [Sofaskin for Weewx](http://neoground.com/projects/weewx/)
 1. [Bootstrap skin for Weewx](https://github.com/brewster76/fuzzy-archer/)
 
+## Canonical source
+
+The cannonical source of Niculskin is [hosted on GitLab.com](gitlab).
+
 ## Installation
 
 The skins have been testet with weewx 3.5.0 and sqlite database.
@@ -96,6 +100,10 @@ No matter how you installed the skin, you should configure it afterwards to you 
 1. You may customize the labels in your language for your needs. The language labels can be found in the appropriate language file in the language skin, e.g. `$WEEWX_ROOT/skins/language/german.conf` for the German language.
 1. If your language is not available, simply copy one of the present language configuration files, change to labels appropriately and refer to it in the Niculskin skin.conf at `WEEWX_ROOT/skins/niculskin/skin.conf`. If you would like to contribute your language file, please open a merge request according to the [Contribution Guideline](CONTRIBUTING.md). Your contribution is welcome.
 
+## Contribution
+
+Please see the [Contribution Guideline](CONTRIBUTING.md) for more details.
+
 ## License
 
 See [LICENSE](LICENSE) file.
@@ -105,3 +113,5 @@ See [LICENSE](LICENSE) file.
 Thanks to Sven Reifschneider, the creator of Sofaskin. I liked his skin most as I was looking for something different in the look and feel of weewx.
 
 And thanks to Nick Dajda. He had the history for the weather data. I'm glad I found his code.
+
+[gitlab]: https://gitlab.com/ngulden/niculskin

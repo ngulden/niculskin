@@ -5,7 +5,7 @@ to contribute in a way that is efficient for everyone.
 
 ## Issue tracker
 
-If you face issues with the skin, please look for a similar issues first in this projects issue tracker. 
+If you face issues with the skin, please look for a similar issues first in [this projects issue tracker](https://gitlab.com/ngulden/niculskin/issues) at GitLab.
 
 If you face issues concerning weewx, please jump to the [weewx project page on GitHub](https://github.com/weewx/weewx).
 
