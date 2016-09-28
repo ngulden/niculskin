@@ -23,13 +23,13 @@ $ git archive master --prefix=niculskin/ | gzip > ../niculskin.tar.gz
 
 ```bash
 $ cd /home/weewx # or where your base install is /home/weewx
-$ bin/wee_extension --install=[wherever you've put the .tar.gz archive]
+$ bin/wee_extension --install=[wherever you have put the .tar.gz archive]
 ```
 
  2. If you used the Debian installer:
 
 ```bash
-$ sudo wee_extension --install=[wherever you've put the .tar.gz archive]
+$ sudo wee_extension --install=[wherever you have put the .tar.gz archive]
 ```
 
 ### Manual installation
