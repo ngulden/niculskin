@@ -9,12 +9,42 @@ Niculskin is a skin for the [weewx project](http://weewx.com/). It is based on t
 
 The skins have been testet with weewx 3.5.0 and sqlite database.
 
+### With extension package
+
+1. Clone this repository to your machine, where weewx is installed.
+1. Create an extension archive:
+
+```bash
+$ git archive master --prefix=niculskin/ | gzip > ../niculskin.tar.gz
+```
+
+3. Install it using the Weewx extension installer.
+ 1. If you have installed weewx yourself:
+
+```bash
+$ cd /home/weewx # or where your base install is /home/weewx
+$ bin/wee_extension --install=[wherever you have put the .tar.gz archive]
+```
+
+ 2. If you used the Debian installer:
+
+```bash
+$ sudo wee_extension --install=[wherever you have put the .tar.gz archive]
+```
+
+### Manual installation
+
 In order to install this skin into your weewx installation follow these steps:
 
 1. Clone this repository to your machine, where weewx is installed.
 1. Stop the weewx service.
 1. Copy the files in `bin/user` to `$WEEWX_ROOT/bin/user`.
 1. Copy the directories `skins/languages` and `skins/niculskin` to `$WEEWX_ROOT/skins`.
+
+## Configuration
+
+No matter how you installed the skin, you should configure it afterwards to you needs. Here's how:
+
 1. Edit your `$WEEWX_ROOT/weewx.conf` and set `skin` in the section `StdReport` so it will look something like this:
 ```conf
 [StdReport]
@@ -41,7 +71,7 @@ In order to install this skin into your weewx installation follow these steps:
         #        skin = Standard
         skin = niculskin
 ```
-6. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language` to your language. It should look like this:
+2. Edit `$WEEWX_ROOT/skins/niculskin/skin.conf` and set `Language` to your language. It should look like this:
 ```conf
 [Language]
 
@@ -52,6 +82,13 @@ In order to install this skin into your weewx installation follow these steps:
     # Choices are: dutch, espanol, finnish, francais, italian, german
 
     language = german
+```
+3. Set the page title and page footer through the `[niculskinLabels]` section in `skins/niculskin/skin.conf`.
+```conf
+[niculskinLabels]
+    title = "The weather, [where you are]"
+    location_href = ["#" for nothing, or a hyperlink to some more information on your location]
+    footer = "&copy; [who you are]"
 ```
 
 ## Customization
