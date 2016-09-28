@@ -1,7 +1,8 @@
 # Changelog for Niculskin
 
-## v 1.0 (unreleased)
+## v1.0
 
+* Add notes about canonical source at GitLab
 * Add customization section to README
 * Add link to source repository to the templates
 * Add contribution guideline
