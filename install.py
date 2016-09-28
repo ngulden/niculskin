@@ -1,80 +1,63 @@
-# installer for the bootstrap skin.
+# installer for the Niculskin.
 #
-# Based on installer for xstats
+# Based on installer for boostrap skin
 #
-# Configured by Nick to install bootstrap skin, 2014-2015.
+# Configured by Nico to install Niculskin, 2016.
 
 import os.path
 import configobj
-
 import setup
 import distutils
 
 def loader():
-    return BootstrapInstaller()
+    return NiculskinInstaller()
 
-class BootstrapInstaller(setup.ExtensionInstaller):
-    _skin_conf_files = ['Bootstrap/skin.conf',
-                        'Images/skin.conf']
+class NiculskinInstaller(setup.ExtensionInstaller):
+    _skin_conf_files = ['niculskin/skin.conf', ]
 
     def __init__(self):
-        files=[('skins/Bootstrap',
-            ['skins/Bootstrap/about.html.tmpl',
-             'skins/Bootstrap/history.html.tmpl',
-             'skins/Bootstrap/index.html.tmpl',
-             'skins/Bootstrap/month.html.tmpl',
-             'skins/Bootstrap/news.html.tmpl',
-             'skins/Bootstrap/stats.html.tmpl',
-             'skins/Bootstrap/week.html.tmpl',
-             'skins/Bootstrap/year.html.tmpl',
-             'skins/Bootstrap/gauges.html.tmpl',
-             'skins/Bootstrap/skin.conf']),
-           ('skins/Bootstrap/NOAA',
-            ['skins/Bootstrap/NOAA/NOAA-YYYY.txt.tmpl',
-             'skins/Bootstrap/NOAA/NOAA-YYYY-MM.txt.tmpl']),
-           ('skins/Images',
-            ['skins/Images/skin.conf']),
+        files=[('skins/niculskin',
+            ['skins/niculskin/history.html.tmpl',
+             'skins/niculskin/index.html.tmpl',
+             'skins/niculskin/month.html.tmpl',
+             'skins/niculskin/week.html.tmpl',
+             'skins/niculskin/year.html.tmpl',
+             'skins/niculskin/skin.conf',
+             'skins/niculskin/favicon.ico']),
+           ('skins/niculskin/NOAA',
+            ['skins/niculskin/NOAA/NOAA-YYYY.txt.tmpl',
+             'skins/niculskin/NOAA/NOAA-YYYY-MM.txt.tmpl']),
            ('bin/user',
-            ['bin/user/gaugeengine.py',
-             'bin/user/gauges.py',
-             'bin/user/historygenerator.py',
+            ['bin/user/historygenerator.py',
              'bin/user/translategenerator.py']),
-           ('skins/Bootstrap/css',
-            ['skins/Bootstrap/css/bootstrap.min.css']),
-           ('skins/Bootstrap/js',
-            ['skins/Bootstrap/js/bootstrap.min.js',
-             'skins/Bootstrap/js/ekko-lightbox.min.js']),
+           ('skins/niculskin/css',
+            ['skins/niculskin/css/main.css',
+             'skins/niculskin/css/main.css.map']),
+           ('skins/niculskin/css/scss',
+            ['skins/niculskin/css/scss/_dry.scss',
+             'skins/niculskin/css/scss/main.scss',
+             'skins/niculskin/css/scss/_mixins.scss',
+             'skins/niculskin/css/scss/_normalize.scss',
+             'skins/niculskin/css/scss/_site.scss',
+             'skins/niculskin/css/scss/_variables.scss',
+            ]),
+           ('skins/niculskin/js',
+            ['skins/niculskin/js/modernizr-2.6.2.min.js']),
            ('skins/languages',
-            ['skins/languages/espanol.conf',
-              'skins/languages/francais.conf',
-              'skins/languages/italian.conf',
-              'skins/languages/german.conf'])]
+            ['skins/languages/dutch.conf',
+             'skins/languages/espanol.conf',
+             'skins/languages/finnish.conf',
+             'skins/languages/francais.conf',
+             'skins/languages/german.conf',
+             'skins/languages/italian.conf'])
+            ]
 
-        super(BootstrapInstaller, self).__init__(
-            version="2.23",
-            name='bootstrap',
-            description='A skin based around the bootstrap 3.2.0 framework',
-            author="Nick Dajda",
-            author_email="nick.dajda@gmail.com",
-            config={
-                'StdReport': {
-                    'SmallImages': {
-                        'skin':'Images',
-                        'HTML_ROOT':'Bootstrap/images'},
-                    'BigImages': {
-                        'skin':'Images',
-                        'HTML_ROOT':'Bootstrap/big_images',
-                        'ImageGenerator' : {
-                            'image_width'            : '900',
-                            'image_height'           : '600',
-                            'anti_alias'             : '2',
-                            'top_label_font_size'    : '18',
-                            'unit_label_font_size'   : '18',
-                            'bottom_label_font_size' : '14',
-                            'axis_label_font_size'   : '14'}},
-                    'HTMLPages': {
-                        'skin':'Bootstrap',
-                        'HTML_ROOT':'Bootstrap'}}},
+        super(NiculskinInstaller, self).__init__(
+            version="1.0",
+            name='niculskin',
+            description='A skin in responsive design using bootstrap and offering history tables',
+            author="Nico Gulden",
+            author_email="ngulden@gmx.de",
             files=files)
 
         print ""
@@ -88,9 +71,9 @@ class BootstrapInstaller(setup.ExtensionInstaller):
                     print "   %s" % l[:-1]
 
         print ""
-        print "Language changes can be made in skins/Bootstrap/skin.conf"
+        print "Language changes can be made in skins/niculskin/skin.conf"
 
         print ""
-        print "Default location for HTML and image files is public_html/Bootstrap"
-        print "*** POINT YOUR BROWSER TO: public_html/Bootstrap/index.html ***"
+        print "Default location for HTML and image files is public_html/"
+        print "*** POINT YOUR BROWSER TO: public_html/index.html ***"
         print ""
