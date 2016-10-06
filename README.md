@@ -16,21 +16,22 @@ The skins have been testet with weewx 3.5.0 and sqlite database.
 ### With extension package
 
 1. Clone this repository to your machine, where weewx is installed.
-1. Create an extension archive:
+2. Create an extension archive:
 
 ```bash
 $ git archive master --prefix=niculskin/ | gzip > ../niculskin.tar.gz
 ```
 
-3. Install it using the Weewx extension installer.
- 1. If you have installed weewx yourself:
+Install it using the Weewx extension installer.
+
+* If you have installed weewx yourself:
 
 ```bash
 $ cd /home/weewx # or where your base install is /home/weewx
 $ bin/wee_extension --install=[wherever you have put the .tar.gz archive]
 ```
 
- 2. If you used the Debian installer:
+* If you used the Debian installer:
 
 ```bash
 $ sudo wee_extension --install=[wherever you have put the .tar.gz archive]
