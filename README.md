@@ -43,7 +43,7 @@ In order to install this skin into your weewx installation follow these steps:
 
 1. Clone this repository to your machine, where weewx is installed.
 1. Stop the weewx service.
-1. Copy the files in `bin/user` to `$WEEWX_ROOT/bin/user`.
+1. Copy the files in `bin/user` to `$WEEWX_ROOT/user`. default: /usr/share/weewx/user
 1. Copy the directories `skins/languages` and `skins/niculskin` to `$WEEWX_ROOT/skins`.
 
 ## Configuration
