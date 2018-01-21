@@ -79,6 +79,18 @@
                         <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$week.barometer.min</td><td>$week.barometer.mintime</td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$week.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$week.rainRate.max</td><td>$week.rainRate.maxtime</td></tr>
+                        #if $week.UV.has_data
+                        <tr><td>High UV</td><td>$week.UV.max</td><td>$week.UV.maxtime</td></tr>
+                        <tr><td>Low UV</td><td>$week.UV.min</td><td>$week.UV.mintime</td></tr>
+                        #end if
+                        #if $week.ET.has_data and $week.ET.sum.raw >0.0
+                        <tr><td>High ET</td><td>$week.ET.max</td><td>$week.ET.maxtime</td></tr>
+                        <tr><td>Low ET</td><td>$week.ET.min</td><td>$week.ET.mintime</td></tr>
+                        #end if
+                        #if $week.radiation.has_data
+                        <tr><td>High Radiation</td><td>$week.radiation.max</td><td>$week.radiation.maxtime</td></tr>
+                        <tr><td>Low Radiation</td><td>$week.radiation.min</td><td>$week.radiation.mintime</td></tr>
+                        #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$week.wind.max $week.wind.gustdir</td><td>$week.wind.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$week.wind.avg</td><td></td></tr>
@@ -126,6 +138,18 @@
                         <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$month.barometer.min</td><td>$month.barometer.mintime</td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$month.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$month.rainRate.max</td><td>$month.rainRate.maxtime</td></tr>
+                        #if $month.UV.has_data
+                        <tr><td>High UV</td><td>$month.UV.max</td><td>$month.UV.maxtime</td></tr>
+                        <tr><td>Low UV</td><td>$month.UV.min</td><td>$month.UV.mintime</td></tr>
+                        #end if
+                        #if $month.ET.has_data and $month.ET.sum.raw >0.0
+                        <tr><td>High ET</td><td>$month.ET.max</td><td>$month.ET.maxtime</td></tr>
+                        <tr><td>Low ET</td><td>$month.ET.min</td><td>$month.ET.mintime</td></tr>
+                        #end if
+                        #if $month.radiation.has_data
+                        <tr><td>High Radiation</td><td>$month.radiation.max</td><td>$month.radiation.maxtime</td></tr>
+                        <tr><td>Low Radiation</td><td>$month.radiation.min</td><td>$month.radiation.mintime</td></tr>
+                        #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$month.wind.max $month.wind.gustdir</td><td>$month.wind.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$month.wind.avg</td><td></td></tr>
