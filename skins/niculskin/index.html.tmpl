@@ -85,13 +85,13 @@
                         <tr><td>$niculskinLabels.conditions.extra2_temp_humidity</td><td>$current.extraTemp2 | $current.extraHumid2</td></tr>
                         #end if
                         #if $day.UV.has_data
-                        <tr><td>UV</td><td>$current.UV</td></tr>
+                        <tr><td>$niculskinLabels.conditions.uv</td><td>$current.UV</td></tr>
                         #end if
                         #if $day.ET.has_data and $day.ET.sum.raw > 0.0
-                        <tr><td>ET</td><td>$current.ET</td></tr>
+                        <tr><td>$niculskinLabels.conditions.et</td><td>$current.ET</td></tr>
                         #end if
                         #if $day.radiation.has_data
-                        <tr><td>Solar Radiation</td><td>$current.radiation</td></tr>
+                        <tr><td>$niculskinLabels.conditions.radiation</td><td>$current.radiation</td></tr>
                         #end if
                         
                     </table>
@@ -114,16 +114,13 @@
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$day.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$day.rainRate.max</td><td>$day.rainRate.maxtime</td></tr>
                         #if $day.UV.has_data
-                        <tr><td>High UV</td><td>$day.UV.max</td><td>$day.UV.maxtime</td></tr>
-                        <tr><td>Low UV</td><td>$day.UV.min</td><td>$day.UV.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.uv_max</td><td>$day.UV.max</td><td>$day.UV.maxtime</td></tr>                        
                         #end if
                         #if $day.ET.has_data and $day.ET.sum.raw >0.0
-                        <tr><td>High ET</td><td>$day.ET.max</td><td>$day.ET.maxtime</td></tr>
-                        <tr><td>Low ET</td><td>$day.ET.min</td><td>$day.ET.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.et_max</td><td>$day.ET.max</td><td>$day.ET.maxtime</td></tr>                        
                         #end if
                         #if $day.radiation.has_data
-                        <tr><td>High Radiation</td><td>$day.radiation.max</td><td>$day.radiation.maxtime</td></tr>
-                        <tr><td>Low Radiation</td><td>$day.radiation.min</td><td>$day.radiation.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.radiation_max</td><td>$day.radiation.max</td><td>$day.radiation.maxtime</td></tr>                        
                         #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$day.wind.max $day.wind.gustdir</td><td>$day.wind.maxtime</td></tr>

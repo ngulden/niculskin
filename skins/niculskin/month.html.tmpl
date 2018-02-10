@@ -78,16 +78,13 @@
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$month.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$month.rainRate.max</td><td>$month.rainRate.maxtime</td></tr>
                         #if $month.UV.has_data
-                        <tr><td>High UV</td><td>$month.UV.max</td><td>$month.UV.maxtime</td></tr>
-                        <tr><td>Low UV</td><td>$month.UV.min</td><td>$month.UV.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.uv_max</td><td>$month.UV.max</td><td>$month.UV.maxtime</td></tr>
                         #end if
                         #if $month.ET.has_data and $month.ET.sum.raw >0.0
-                        <tr><td>High ET</td><td>$month.ET.max</td><td>$month.ET.maxtime</td></tr>
-                        <tr><td>Low ET</td><td>$month.ET.min</td><td>$month.ET.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.et_max</td><td>$month.ET.max</td><td>$month.ET.maxtime</td></tr>                       
                         #end if
                         #if $month.radiation.has_data
-                        <tr><td>High Radiation</td><td>$month.radiation.max</td><td>$month.radiation.maxtime</td></tr>
-                        <tr><td>Low Radiation</td><td>$month.radiation.min</td><td>$month.radiation.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.radiation_max</td><td>$month.radiation.max</td><td>$month.radiation.maxtime</td></tr>                      
                         #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$month.wind.max $month.wind.gustdir</td><td>$month.wind.maxtime</td></tr>
@@ -137,16 +134,14 @@
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$year.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$year.rainRate.max</td><td>$year.rainRate.maxtime</td></tr>
                         #if $year.UV.has_data
-                        <tr><td>High UV</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
-                        <tr><td>Low UV</td><td>$year.UV.min</td><td>$year.UV.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.uv_max</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
+                  
                         #end if
                         #if $year.ET.has_data and $year.ET.sum.raw >0.0
-                        <tr><td>High ET</td><td>$year.ET.max</td><td>$year.ET.maxtime</td></tr>
-                        <tr><td>Low ET</td><td>$year.ET.min</td><td>$year.ET.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.et_max</td><td>$year.ET.max</td><td>$year.ET.maxtime</td></tr>                       
                         #end if
                         #if $year.radiation.has_data
-                        <tr><td>High Radiation</td><td>$year.radiation.max</td><td>$year.radiation.maxtime</td></tr>
-                        <tr><td>Low Radiation</td><td>$year.radiation.min</td><td>$year.radiation.mintime</td></tr>
+                        <tr><td>$niculskinLabels.conditions.radiation_max</td><td>$year.radiation.max</td><td>$year.radiation.maxtime</td></tr>
                         #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
@@ -202,10 +197,7 @@
                     #end if
                     #if $month.radiation.has_data
                     <img src="monthradiation.png" alt="Radiation" />
-                    #end if
-                    #if $month.UV.has_data
-                    <img src="monthuv.png" alt="UV Index" />
-                    #end if
+                    #end if                   
                     #if $month.rxCheckPercent.has_data
                     <img src="monthrx.png" alt="month rx percent"/>
                     #end if
