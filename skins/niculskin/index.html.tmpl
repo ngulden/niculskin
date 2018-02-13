@@ -78,8 +78,22 @@
                         <tr><td>$niculskinLabels.conditions.wind</td><td>$current.windSpeed $current.windDir.ordinal_compass ($current.windDir)</td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate</td><td>$current.rainRate</td></tr>
                         <tr><td>$niculskinLabels.conditions.in_temp_humidity</td><td>$current.inTemp | $current.inHumidity</td></tr>
+                        #if $day.extraTemp1.has_data
                         <tr><td>$niculskinLabels.conditions.extra1_temp_humidity</td><td>$current.extraTemp1 | $current.extraHumid1</td></tr>
+                        #end if
+                        #if $day.extraTemp1.has_data
                         <tr><td>$niculskinLabels.conditions.extra2_temp_humidity</td><td>$current.extraTemp2 | $current.extraHumid2</td></tr>
+                        #end if
+                        #if $day.UV.has_data
+                        <tr><td>$niculskinLabels.conditions.uv</td><td>$current.UV</td></tr>
+                        #end if
+                        #if $day.ET.has_data and $day.ET.sum.raw > 0.0
+                        <tr><td>$niculskinLabels.conditions.et</td><td>$current.ET</td></tr>
+                        #end if
+                        #if $day.radiation.has_data
+                        <tr><td>$niculskinLabels.conditions.radiation</td><td>$current.radiation</td></tr>
+                        #end if
+                        
                     </table>
                 </div>
 
@@ -99,6 +113,15 @@
                         <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$day.barometer.min</td><td>$day.barometer.mintime</td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_sum</td><td>$day.rain.sum</td><td></td></tr>
                         <tr><td>$niculskinLabels.conditions.rain_rate_max</td><td>$day.rainRate.max</td><td>$day.rainRate.maxtime</td></tr>
+                        #if $day.UV.has_data
+                        <tr><td>$niculskinLabels.conditions.uv_max</td><td>$day.UV.max</td><td>$day.UV.maxtime</td></tr>                        
+                        #end if
+                        #if $day.ET.has_data and $day.ET.sum.raw >0.0
+                        <tr><td>$niculskinLabels.conditions.et_max</td><td>$day.ET.max</td><td>$day.ET.maxtime</td></tr>                        
+                        #end if
+                        #if $day.radiation.has_data
+                        <tr><td>$niculskinLabels.conditions.radiation_max</td><td>$day.radiation.max</td><td>$day.radiation.maxtime</td></tr>                        
+                        #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$day.wind.max $day.wind.gustdir</td><td>$day.wind.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$day.wind.avg</td><td></td></tr>
@@ -127,6 +150,7 @@
                         <tr><td>$niculskinLabels.conditions.humidity_max</td><td>$day.extraHumid2.max</td><td>$day.extraHumid2.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$day.extraHumid2.min</td><td>$day.extraHumid2.mintime</td></tr>
                         #end if
+                        
                     </table>
                 </div>
                 

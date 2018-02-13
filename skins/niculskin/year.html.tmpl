@@ -75,6 +75,15 @@
                         <tr><td>$niculskinLabels.conditions.humidity_min</td><td>$year.outHumidity.min</td><td>$year.outHumidity.mintime</td></tr>
                         <tr><td>$niculskinLabels.conditions.barometer_max</td><td>$year.barometer.max</td><td>$year.barometer.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.barometer_min</td><td>$year.barometer.min</td><td>$year.barometer.mintime</td></tr>
+                        #if $year.UV.has_data
+                        <tr><td>$niculskinLabels.conditions.uv_max</td><td>$year.UV.max</td><td>$year.UV.maxtime</td></tr>
+                        #end if
+                        #if $year.ET.has_data and $year.ET.sum.raw >0.0
+                        <tr><td>$niculskinLabels.conditions.et_max</td><td>$year.ET.max</td><td>$year.ET.maxtime</td></tr>
+                        #end if
+                        #if $year.radiation.has_data
+                        <tr><td>$niculskinLabels.conditions.radiation_max</td><td>$year.radiation.max</td><td>$year.radiation.maxtime</td></tr>
+                        #end if
                         <tr><td><h3>$niculskinLabels.headings.wind</h3></td><td></td>
                         <tr><td>$niculskinLabels.conditions.wind_max</td><td>$year.wind.max $year.wind.gustdir</td><td>$year.wind.maxtime</td></tr>
                         <tr><td>$niculskinLabels.conditions.wind_avg</td><td>$year.wind.avg</td><td></td></tr>
@@ -137,9 +146,6 @@
                     #end if
                     #if $year.radiation.has_data
                     <img src="yearradiation.png" alt="Radiation" />
-                    #end if
-                    #if $year.UV.has_data
-                    <img src="yearuv.png" alt="UV Index" />
                     #end if
                     #if $year.rxCheckPercent.has_data
                     <img src="yearrx.png" alt="year rx percent"/>
