@@ -152,12 +152,17 @@ class MyXSearch(SearchList):
                 noaa = True if table == 'NOAA' else False
 
                 table_options = weeutil.weeutil.accumulateLeaves(self.table_dict[table])
+                dbind = None
+                if 'data_binding' in table_options:
+                    dbind = table_options['data_binding']
+                all_stats = TimespanBinder(alltime_timespan, db_lookup, data_binding=dbind, formatter=self.generator.formatter,
+                                      converter=self.generator.converter)
 
                 # Show all time unless starting date specified
                 startdate = table_options.get('startdate', None)
                 if startdate is not None:
-                    table_timespan = weeutil.weeutil.TimeSpan(int(startdate), db_lookup().last_timestamp)
-                    table_stats = TimespanBinder(table_timespan, db_lookup, formatter=self.generator.formatter,
+                    table_timespan = weeutil.weeutil.TimeSpan(int(startdate), db_lookup(dbind).last_timestamp)
+                    table_stats = TimespanBinder(table_timespan, db_lookup, data_binding=dbind, formatter=self.generator.formatter,
                                       converter=self.generator.converter)
                 else:
                     table_stats = all_stats
@@ -182,6 +187,7 @@ class MyXSearch(SearchList):
 
         bgColours = zip(table_options['minvalues'], table_options['maxvalues'], table_options['colours'])
 
+        reading = None
         if NOAA is True:
             unit_formatted = ""
         else:
@@ -200,7 +206,7 @@ class MyXSearch(SearchList):
                 except KeyError:
                     syslog.syslog(syslog.LOG_INFO, "%s: Problem with aggregate_threshold. Should be in the format: [value], [units]" %
                                   (os.path.basename(__file__)))
-                    return "Could not generate table %s" % table_name
+                    threshold_value = 0
 
                 threshold_units = table_options['aggregate_threshold'][1]
 
@@ -276,9 +282,32 @@ class MyXSearch(SearchList):
                 else:
                     if unit_type == 'count':
                         try:
+                            # The binding of threshold_value and threshold_units
+                            # are bounded in this code is a bit weird. Sadly,
+                            # reading the value out and then initializing it if
+                            # it fails was the only way I could figure out How
+                            # to support group_count without breaking anything.
+                            # (Initializing the variable in an outer scope,
+                            # actually breaks this code.)
+                            #
+                            # We check if we need to intialzie threshold_value
+                            # and threshold_units depending on if we reading
+                            # the value out fails.
+                            x = threshold_value
+                        except UnboundLocalError:
+                            threshold_value = 0
+                            threshold_units = 'count'
+
+                        # I don't get why the group needs to be passed only sometimes.
+                        # Specifically, pass group_count only if it is a group_count,
+                        # but do not pass a unit group if it is a different unit group.
+                        try:
                             value = getattr(getattr(month, obs_type), aggregate_type)((threshold_value, threshold_units)).value_t
                         except:
-                            value = [0, 'count']
+                            try:
+                                value = getattr(getattr(month, obs_type), aggregate_type)((threshold_value, threshold_units, 'group_count')).value_t
+                            except Exception as e:
+                                value = [0, 'count']
                     else:
                         value = converter.convert(getattr(getattr(month, obs_type), aggregate_type).value_t)
 
